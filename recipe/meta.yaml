@@ -19,11 +19,12 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - nlohmann_json
-    - zarray
-    - xtensor-io
+    - zarray >=0.0.5,<0.1
+    - xtensor-io >=0.12.4,<0.13
   run:
     # header-only packages don't have
     # a run_exports section
+    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
     - {{ pin_compatible('zarray', max_pin='x.x') }}
     - {{ pin_compatible('xtensor-io', max_pin='x.x') }}
 
