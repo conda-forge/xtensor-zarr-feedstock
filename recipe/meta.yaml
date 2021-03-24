@@ -10,7 +10,7 @@ source:
   sha256: bc5b431e8776c8c4303f01aa862e08171e9a449d5a0a6d3d987a30249ef26e18
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -20,12 +20,14 @@ requirements:
   host:
     - nlohmann_json
     - zarray >=0.0.5,<0.1
+    - xtensor >=0.23.4
     - xtensor-io >=0.12.4,<0.13
   run:
     # header-only packages don't have
     # a run_exports section
     - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
     - {{ pin_compatible('zarray', max_pin='x.x') }}
+    - {{ pin_compatible('xtensor', max_pin='x.x') }}
     - {{ pin_compatible('xtensor-io', max_pin='x.x') }}
 
 test:
