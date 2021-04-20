@@ -1,5 +1,5 @@
 {% set name = "xtensor-zarr" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/xtensor-stack/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: bc5b431e8776c8c4303f01aa862e08171e9a449d5a0a6d3d987a30249ef26e18
+  sha256: ee858162cba6840eaa2efd7954e687fbff69d2248a8f60074b862a4ddf5b1787
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -19,9 +19,9 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - nlohmann_json
-    - zarray >=0.0.5,<0.1
-    - xtensor >=0.23.4
-    - xtensor-io >=0.12.4,<0.13
+    - zarray >=0.0.6,<0.1
+    - xtensor >=0.23.7,<0.24
+    - xtensor-io >=0.12.6,<0.13
   run:
     # header-only packages don't have
     # a run_exports section
