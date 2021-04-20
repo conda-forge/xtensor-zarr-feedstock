@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/xtensor-stack/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: bc5b431e8776c8c4303f01aa862e08171e9a449d5a0a6d3d987a30249ef26e18
+  sha256: ee858162cba6840eaa2efd7954e687fbff69d2248a8f60074b862a4ddf5b1787
 
 build:
   number: 0
