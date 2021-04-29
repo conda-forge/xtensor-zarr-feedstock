@@ -1,5 +1,5 @@
 {% set name = "xtensor-zarr" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/xtensor-stack/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ee858162cba6840eaa2efd7954e687fbff69d2248a8f60074b862a4ddf5b1787
+  sha256: ce02f4262b14765cfb893471dbcec37ec3be77059eff425dd34179bd9e80e9ae
 
 build:
   number: 0
