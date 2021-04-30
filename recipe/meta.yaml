@@ -1,5 +1,5 @@
 {% set name = "xtensor-zarr" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/xtensor-stack/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ee858162cba6840eaa2efd7954e687fbff69d2248a8f60074b862a4ddf5b1787
+  sha256: ce02f4262b14765cfb893471dbcec37ec3be77059eff425dd34179bd9e80e9ae
 
 build:
   number: 0
@@ -18,17 +18,22 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
   host:
-    - nlohmann_json
-    - zarray >=0.0.6,<0.1
-    - xtensor >=0.23.7,<0.24
-    - xtensor-io >=0.12.6,<0.13
+    - zarray >=0.1,<0.2
+    - xtensor >=0.23.8,<0.24
+    - xtensor-io >=0.12.7,<0.13
+    - nlohmann_json >=3.9.1,<3.10
+    - gdal >=3.0,<3.1
+    - zlib >=1.2.11,<1.3
+    - blosc >=1.21.0,<1.22
+    - cpp-filesystem >=1.3,<1.4
   run:
     # header-only packages don't have
     # a run_exports section
-    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
     - {{ pin_compatible('zarray', max_pin='x.x') }}
     - {{ pin_compatible('xtensor', max_pin='x.x') }}
     - {{ pin_compatible('xtensor-io', max_pin='x.x') }}
+    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
+    - {{ pin_compatible('cpp-filesystem', max_pin='x.x') }}
 
 test:
   commands:
@@ -36,9 +41,11 @@ test:
     - test -f ${PREFIX}/include/xtensor-zarr/xzarr_hierarchy.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/xtensor-zarr/xtensor-zarrConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/xtensor-zarr/xtensor-zarrConfigVersion.cmake  # [unix]
+    - test -e ${PREFIX}/lib/libxtensor-zarr-gdal${SHLIB_EXT}  # [unix]
     - if not exist %LIBRARY_PREFIX%\include\xtensor-zarr\xzarr_hierarchy.hpp (exit 1)  # [win]
     - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-zarr\xtensor-zarrConfig.cmake (exit 1)  # [win]
     - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-zarr\xtensor-zarrConfigVersion.cmake (exit 1)  # [win]
+    - if not exist %LIBRARY_LIB%\\xtensor-zarr-gdal.lib (exit 1)  # [win]
 
 about:
   home: https://github.com/xtensor-stack/xtensor-zarr
