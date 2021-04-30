@@ -1,5 +1,5 @@
 {% set name = "xtensor-zarr" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/xtensor-stack/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ce02f4262b14765cfb893471dbcec37ec3be77059eff425dd34179bd9e80e9ae
+  sha256: 24949046643865445c591c79114f2ee3cd48eb2650f6ff9f20b4890b5ee9a94b
 
 build:
   number: 0
@@ -45,7 +45,7 @@ test:
     - if not exist %LIBRARY_PREFIX%\include\xtensor-zarr\xzarr_hierarchy.hpp (exit 1)  # [win]
     - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-zarr\xtensor-zarrConfig.cmake (exit 1)  # [win]
     - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-zarr\xtensor-zarrConfigVersion.cmake (exit 1)  # [win]
-    - if not exist %LIBRARY_LIB%\\xtensor-zarr-gdal.lib (exit 1)  # [win]
+    - if not exist %LIBRARY_LIB%\\libxtensor-zarr-gdal.lib (exit 1)  # [win]
 
 about:
   home: https://github.com/xtensor-stack/xtensor-zarr
