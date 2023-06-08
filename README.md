@@ -1,11 +1,11 @@
-About xtensor-zarr
-==================
+About xtensor-zarr-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xtensor-zarr-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/xtensor-stack/xtensor-zarr
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xtensor-zarr-feedstock/blob/main/LICENSE.txt)
 
 Summary: Implementation of the Zarr version 3.0 core protocol based on xtensor
 
