@@ -10,7 +10,7 @@ source:
   sha256: 24949046643865445c591c79114f2ee3cd48eb2650f6ff9f20b4890b5ee9a94b
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win and vc<14]
 
 requirements:
@@ -18,6 +18,7 @@ requirements:
     - make  # [unix]
     - cmake
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - zarray >=0.1,<0.2
     - xtensor >=0.23.8,<0.24
